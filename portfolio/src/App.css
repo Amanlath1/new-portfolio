@@ -1,0 +1,328 @@
+/* /src/App.css */
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    /* Remove the background and animation properties */
+    background-color: #111; /* A dark background for the particles to pop */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    /* Make the background a semi-transparent white */
+    background: rgba(255, 255, 255, 0.85);
+    /* Add a backdrop-filter for a frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+header {
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  /* Add perspective to create a 3D space for child elements */
+  perspective: 1000px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem; /* Slightly larger */
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05); /* Subtle text shadow */
+}
+
+header p {
+    margin: 0.5rem 0;
+    color: #555;
+    font-size: 1.1rem; /* Slightly larger */
+}
+
+header a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #2980b9;
+}
+
+/* --- AI Quote --- */
+.quote-container {
+    background-color: #fff; /* White background for the quote box */
+    border-left: 5px solid #3498db;
+    padding: 1.5rem; /* Increased padding */
+    margin: 2rem 0;
+    font-style: italic;
+    color: #34495e;
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.quote-container p {
+    margin: 0;
+    font-size: 1.2rem; /* Slightly larger quote text */
+    font-weight: 500; /* Semi-bold for emphasis */
+}
+
+/* --- Sections --- */
+section {
+    margin-bottom: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem; /* Slightly larger */
+    color: #34495e;
+    border-bottom: 3px solid #3498db; /* Thicker accent line */
+    padding-bottom: 0.7rem; /* More space below the line */
+    margin-bottom: 2rem; /* More space below the heading */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.03); /* Subtle text shadow */
+}
+
+/* --- Items (for Experience/Projects/Education) --- */
+.item {
+    margin-bottom: 1.5rem;
+}
+
+.item h3 {
+    margin-bottom: 0.2rem;
+    color: #2c3e50;
+}
+
+.item p {
+    margin: 0.2rem 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- Skills Grid --- */
+.skills-grid div {
+    background-color: #f9f9f9;
+    padding: 1.2rem; /* Slightly more padding */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #e0e0e0;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.skills-grid div:hover {
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06); /* Subtle shadow on hover */
+}
+
+.skills-grid h3 {
+    margin-top: 0;
+    color: #34495e; /* Darker heading */
+}
+/* ========================================= */
+/* Responsive Design (Media Queries)         */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  /* Reduce overall padding and margin for the main container on smaller screens */
+  .container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+
+  /* Decrease the font size for the main name heading */
+  header h1 {
+    font-size: 2rem;
+  }
+
+  /* Decrease the font size for section headings */
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Adjust the quote container for a more compact look */
+  .quote-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .quote-container p {
+    font-size: 1rem;
+  }
+
+  /* The skills grid will automatically stack to a single column 
+     because of the 'auto-fit' property we used, 
+     so no changes are needed there! */
+}
+.item {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transitions */
+}
+
+.item:hover {
+    transform: translateY(-4px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* More pronounced shadow on hover */
+}
+
+
+/* Keyframe animation for the floating effect */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px); /* How high it floats */
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Container for the 3D effect */
+.bitmoji-container {
+  /* This preserves the 3D transformations */
+  transform-style: preserve-3d;
+  /* Smooths the transition when the mouse leaves */
+  transition: transform 0.2s ease-out;
+  margin-bottom: 1rem;
+}
+
+/* Styles for the Bitmoji image */
+.bitmoji-hello {
+  height: 150px; /* You can adjust the size */
+  /* This "lifts" the image towards the viewer in the 3D space */
+  transform: translateZ(40px);
+  /* Use drop-shadow for a more realistic shadow that follows the image shape */
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.contact-section p {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: #555;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.contact-form textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  display: inline-block;
+  margin: 1rem 0;
+  padding: 10px 20px;
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #3498db;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* --- Scroll Animation Styles --- */
+
+.fade-in-section {
+  /* This is the final, visible state, so we don't need much here */
+  /* The transition will handle the animation smoothness */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Set the initial state for ODD numbered sections (1st, 3rd, 5th, etc.) */
+.fade-in-section:nth-of-type(odd) {
+  opacity: 0;
+  transform: translateX(-100px); /* Start 100px to the left */
+}
+
+/* Set the initial state for EVEN numbered sections (2nd, 4th, 6th, etc.) */
+.fade-in-section:nth-of-type(even) {
+  opacity: 0;
+  transform: translateX(100px); /* Start 100px to the right */
+}
+
+/* This class is added by our hook when the section is on screen */
+.fade-in-section.is-visible {
+  /* Final state: fully visible and in its original horizontal position */
+  opacity: 1;
+  transform: translateX(0);
+}
